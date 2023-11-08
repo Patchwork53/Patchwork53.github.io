@@ -28,4 +28,4 @@ Work experience
   * Team: Android Payment Team
   
 
-[Full CV] (https://docs.google.com/document/d/1BgHEm0UCUUmteekMVJSFn5acm5H5I0IvUay3Fj35SVQ/edit?usp=sharing)
+[Full CV](https://docs.google.com/document/d/1BgHEm0UCUUmteekMVJSFn5acm5H5I0IvUay3Fj35SVQ/edit?usp=sharing)
