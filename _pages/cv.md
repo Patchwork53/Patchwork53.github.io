@@ -11,9 +11,9 @@ redirect_from:
 
 Education
 ======
-* B.S. in CSE, Bangladesh University of Engineering and Technology, 2024 (expected)
-* Notre Dame College, Dhaka
-* St. Joseph High School, Dhaka
+* B.S in CSE, BUET 2024 (expected)
+* Notre Dame College, 2018
+* St. Joseph High School, 2016
 
 Work experience
 ======
