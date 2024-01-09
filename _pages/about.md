@@ -8,7 +8,10 @@ redirect_from:
   - /about.html
 ---
 
-I'm Sameen, a final year undergraduate student of Computer Science and Engineering (CSE) at Bangladesh University of Engineering and Technology (BUET). My area of interest is Natural Language Processing but I dabble in Computer Vision as well. I'm a huge fan on open-source initiatives like huggingface, LLaMA, Mistral, Stable Diffusion etc. and hope to contribute to the OSS ML community.
+## About Me
+I'm Sameen, a final year undergraduate student of Computer Science and Engineering (CSE) at Bangladesh University of Engineering and Technology (BUET). My area of interest is Natural Language Processing, but I also dabble in Computer Vision. I have extensive experience in Deep Learning competitions in multiple domains like Speech Recognition, Named Entity Recognition, Grammatical Error Detection, Action Recognition, Layout Analysis, and  Biomedical Imaging. I'm currently learning deep learning theory from the ground up to augment my engineering skills.
 
-Besides NLP, I like reading fiction. Kafka is my favorite and Nabokov, my guilty pleasure. I also like learning bits and pieces of various languages but hope to learn some to fluency if I ever have the time. 
+## News
++ [12/2023] Our paper [Asymmetric Bias in Text-to-Image Generation with Adversarial Attacks](https://arxiv.org/abs/2312.14440) is up on arXiv.
++ [10/2023] Our team won [IEEE VIPCUP at ICIP 2023](https://signalprocessingsociety.org/community-involvement/video-image-processing-cup) Malaysia. The task was [Ophthalmic Biomarker Detection from Retinal Scans](https://alregib.ece.gatech.edu/2023-vip-cup/).
 
