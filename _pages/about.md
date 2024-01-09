@@ -7,8 +7,6 @@ redirect_from:
   - /about/
   - /about.html
 ---
-
-## About Me
 I'm Sameen, a final year undergraduate student of Computer Science and Engineering (CSE) at Bangladesh University of Engineering and Technology (BUET). My area of interest is Natural Language Processing, but I also dabble in Computer Vision. I have extensive experience in Deep Learning competitions in multiple domains like Speech Recognition, Named Entity Recognition, Grammatical Error Detection, Action Recognition, Layout Analysis, and  Biomedical Imaging. I'm currently learning deep learning theory from the ground up to augment my engineering skills.
 
 ## News
