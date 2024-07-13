@@ -21,8 +21,6 @@ I'm Sameen, an incoming CS PhD student at University of California Riverside (Fa
 + LLM Agents for Blackbox UI navigation
 
 ## Reading List
-I'm currently reading into these topics. Reach out if you wana chat or collaborate.
-
 + In-Context Learning including In-Context Vectors and ICL as Kernel Regression.
 + Interpretable and non-interpretable adversarial Attacks such as AmpleGCG, AutoDAN 1 (Liu et al) and AutoDAN 2 (Ziu et al).
 + Information Theoretic interpretation of Diffusion and Flow Matching.
