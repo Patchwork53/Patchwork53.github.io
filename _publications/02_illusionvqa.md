@@ -1,7 +1,7 @@
 ---
 title: "IllusionVQA: A Challenging Optical Illusion Dataset for Vision Language Models"
 collection: publications
-Authors: 'Haz Sameen Shahgir<sup>*</sup>, Khondker Salman Sayeed<sup>*</sup>, Abhik Bhattacharjee, <b>Wasi Uddin Ahmad</b>, Yue Dong, and Rifat Shahriyar.'
+Authors: '<b>Haz Sameen Shahgir<b><sup>*</sup>, Khondker Salman Sayeed<sup>*</sup>, Abhik Bhattacharjee, Wasi Uddin Ahmad, Yue Dong, and Rifat Shahriyar.'
 date: 07/2024
 venue: 'COLM'
 paperurl: 'https://arxiv.org/abs/2403.15952'
