@@ -3,7 +3,7 @@ title: "Too Late to Train, Too Early To Use? A Study on Necessity and Viability 
 collection: publications
 Authors: 'Tamzeed Mahfuz, Satak Kumar Dey, Ruwad Naswan, Hasnaen Adil, Khondker Salman Sayeed, <b>Haz Sameen Shahgir</b>.'
 date: 06/2024
-venue: 'Preprint'
+venue: 'arXiv'
 paperurl: 'https://arxiv.org/abs/2407.00416'
 codeurl: ''
 excerpt: ''

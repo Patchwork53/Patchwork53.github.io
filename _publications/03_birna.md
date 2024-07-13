@@ -3,7 +3,7 @@ title: "BiRNA-BERT Allows Efficient RNA Language Modeling with Adaptive Tokeniza
 collection: publications
 Authors: 'Md Toki Tahmid<sup>*</sup>,<b>Haz Sameen Shahgir<b><sup>*</sup>, Sazan Mahbub, Yue Dong, Md Shamsuzzoha Bayzid.'
 date: 06/2024
-venue: 'Preprint'
+venue: 'arXiv'
 paperurl: 'https://www.biorxiv.org/content/10.1101/2024.07.02.601703v1'
 codeurl: 'https://github.com/buetnlpbio/BiRNA-BERT'
 excerpt: ''
