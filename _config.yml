@@ -5,6 +5,12 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # `jekyll serve`. If you change this file, please restart the server process.
 
+plugins:
+  - jekyll-remote-theme
+remote_theme           : "mmistakes/minimal-mistakes"
+minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+
 # Site Settings
 locale                   : "en-US"
 title                    : "Haz Sameen Shahgir"
@@ -82,7 +88,7 @@ analytics:
 author:
   name             : "Haz Sameen Shahgir"
   avatar           : "profile.png"
-  bio              : "PhD Student UCR"
+  bio              : "PhD Student at UCR"
   location         : 
   employer         :
   googlescholar    : "https://scholar.google.com/citations?user=tfxCpGMAAAAJ&hl=en"
@@ -145,6 +151,7 @@ exclude:
   - package.json
   - tmp
   - vendor
+  - assets
 keep_files:
   - .git
   - .svn
