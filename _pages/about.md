@@ -10,7 +10,7 @@ redirect_from:
 I'm Sameen, an incoming CS PhD student at University of California Riverside (Fall 24). My primary area of interest is Natural Language Processing, but have broad interests in MLSys and multimodal AI.
 
 ## News
-+ [07/2024] Our paper [IllusionVQA](https://illusionvqa.github.io/) was accepted in the Conference On Language Modelingg (COLM) 2024.
++ [07/2024] Our paper [IllusionVQA](https://illusionvqa.github.io/) was accepted in the Conference On Language Modeling (COLM) 2024.
 + [06/2024] Our paper on a new state-of-the-art RNA Language Model [BiRNA-BERT](https://www.biorxiv.org/content/10.1101/2024.07.02.601703v1) is out now on bioRxiv.
 + [06/2024] Our analysis paper [Too Late to Train, Too Early To Use? - A Study on Bengali LLMs](https://arxiv.org/abs/2407.00416) is out now arxiv.
 + [04/2024] Our paper [Asymmetric Bias in Text-to-Image Generation with Adversarial Attacks](https://arxiv.org/abs/2312.14440) was accepted in Findings of ACL 2024.
