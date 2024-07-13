@@ -57,7 +57,7 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : &twitter
+  username               : sameen2080
 facebook:
   username               :
   app_id                 :
@@ -82,8 +82,8 @@ analytics:
 author:
   name             : "Haz Sameen Shahgir"
   avatar           : "profile.png"
-  bio              : "CSE Undergrad@BUET - RA@Samsung RnD Bangladesh - BUET CSE NLP Group"
-  location         : "Dhaka, Bangladesh"
+  bio              : "PhD Student UCR"
+  location         : 
   employer         :
   googlescholar    : "https://scholar.google.com/citations?user=tfxCpGMAAAAJ&hl=en"
   email            : "sameen2080 AT gmail DOT com"
