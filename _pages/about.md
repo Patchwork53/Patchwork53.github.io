@@ -7,7 +7,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I'm a first-year CS PhD student at University of California Riverside, advised by the incredible Professor [Yue Dong](https://yuedong.us/). My primary area of interest is multimodal neural network architectures with a focus on how they respond to adversarial attacks and out-of-distribution data.
+I'm a first-year CS PhD student at University of California Riverside, advised by the incredible Professor [Yue Dong](https://yuedong.us/). My primary area of interest is multimodal neural networks, with a focus on how they respond to adversarial attacks and out-of-distribution data.
 
 ## News
 + [08/2024] Attending ACL 2024 as a tutorial presenter on [Vulnerabilities of Large Language Models to Adversarial Attacks](https://llm-vulnerability.github.io/).
