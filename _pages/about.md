@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "👋 I'm Sameen!"
+title: "I'm Sameen 👋"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
