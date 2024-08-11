@@ -1,15 +1,16 @@
 ---
 permalink: /
-title: "About Me"
+title: "👋 I'm Sameen!"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
-I'm Sameen, an incoming CS PhD student at University of California Riverside (Fall 24). My primary area of interest is Natural Language Processing, but have broad interests in MLSys and multimodal AI.
+I'm a first-year CS PhD student at University of California Riverside, advised by the incredible Professor [Yue Dong](https://yuedong.us/). My primary area of interest is multimodal neural network architectures with a focus on how they respond to adversarial attacks and out-of-distribution data.
 
 ## News
++ [08/2024] Attending ACL 2024 as a tutorial presenter on [Vulnerabilities of Large Language Models to Adversarial Attacks](https://llm-vulnerability.github.io/).
 + [07/2024] Our paper [IllusionVQA](https://illusionvqa.github.io/) was accepted in the Conference On Language Modeling (COLM) 2024.
 + [06/2024] Our paper on a new state-of-the-art RNA Language Model [BiRNA-BERT](https://www.biorxiv.org/content/10.1101/2024.07.02.601703v1) is out now on bioRxiv.
 + [06/2024] Our analysis paper [Too Late to Train, Too Early To Use? - A Study on Bengali LLMs](https://arxiv.org/abs/2407.00416) is out now arxiv.
