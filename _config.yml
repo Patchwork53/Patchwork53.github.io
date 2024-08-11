@@ -28,9 +28,9 @@ author:
   avatar           : "profile.png"
   name             : "Haz Sameen Shahgir"
   pronouns         : # example: "she/her"  
-  bio              : 
-  location         : 
-  employer         : "University of California Riverside"
+  bio              : "CS PhD Student, University of California Riverside"
+  location         : "Riverside"
+  employer         : 
   uri              : # URL
   email            : "hshah057@ucr.edu"
 
