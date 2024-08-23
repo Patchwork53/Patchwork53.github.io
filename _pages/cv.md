@@ -11,20 +11,20 @@ redirect_from:
 
 Education
 ======
-* B.S in CSE, BUET 2024 (expected)
+* B.S in CSE, Bangladesh University of Engineering and Technology, 2024
 * Notre Dame College, 2018
 * St. Joseph High School, 2016
 
 Work experience
 ======
-* June - Ongoing, 2023: Research Assistant
-  * Collaboration between BUET CSE and Samsung RnD Bangladesh
-  * Duties included: Data Collection, Model Training
+* June, 2023 - Ongoing: Research Assistant, Samsung RnD Bangladesh
+  * Collaboration between BUET, CSE and Samsung RnD Bangladesh
+  * Topic: UI Navigation using Language Models
   * Supervisor: Dr. Anindya Iqbal, Dr. Sadia Sharmin
 
 * Summer 2023: Software Engineering Intern
   * Red.Digital Limited
-  * Duties included: ID Card Recognition on Edge Device
+  * Topic: User National ID recognition using Computer Vision
   * Team: Android Payment Team
   
 
