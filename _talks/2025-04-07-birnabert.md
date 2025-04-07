@@ -8,10 +8,8 @@ date: 2025-02-17
 location: "Montreal, Canada"
 ---
 
-
-# BiRNA-BERT: Efficient RNA Language Modeling with Adaptive Tokenization 
+Slides of the talk I presented at Mila's Multiomics Reading Group in February 2025.
 
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQHW_tNTxUZSSawHEA952PqCsfPEo0IW9TBOKaF1Gv9iue_N83gKIrja2G_fB31FbMDvcw_pgW95-oi/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
-
-Full Paper Link: https://www.biorxiv.org/content/10.1101/2024.07.02.601703v3
+[Research Paper Link](https://www.biorxiv.org/content/10.1101/2024.07.02.601703v3)
