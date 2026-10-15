@@ -1,17 +1,16 @@
 ---
-title: "IllusionVQA: A Challenging Optical Illusion Dataset for Vision Language Models"
+title: "IllusionVQA: A Challenging Optical Illusion Dataset for Vision-Language Models"
 collection: publications
-Authors: '<b>Haz Sameen Shahgir<b><sup>*</sup>, Khondker Salman Sayeed<sup>*</sup>, Abhik Bhattacharjee, Wasi Uddin Ahmad, Yue Dong, and Rifat Shahriyar.'
-date: 07/2024
-venue: 'COLM'
+Authors: '<b>Haz Shahgir</b><sup>*</sup>, Khondker Sayeed<sup>*</sup>, Abhik Bhattacharjee, Wasi Ahmad, Yue Dong, Rifat Shahriyar'
+date: 2024-10-01
+venue: 'COLM 2024'
 paperurl: 'https://arxiv.org/abs/2403.15952'
 codeurl: 'https://github.com/csebuetnlp/IllusionVQA'
 excerpt: ''
 webpage: 'https://illusionvqa.github.io/'
 ---
----
-<a href='https://arxiv.org/pdf/2403.15952.pdf' target="_blank">[Download Paper]</a><a href='https://github.com/csebuetnlp/IllusionVQA' target="_blank">[Source Code]</a>
+<a href='https://arxiv.org/pdf/2403.15952.pdf' target="_blank">[Download Paper]</a> <a href='https://github.com/csebuetnlp/IllusionVQA' target="_blank">[Source Code]</a> <a href='https://illusionvqa.github.io/' target="_blank">[Webpage]</a>
 
 <p align="justify">
-The advent of Vision Language Models (VLM) has allowed researchers to investigate the visual understanding of a neural network using natural language. Beyond object classification and detection, VLMs are capable of visual comprehension and common-sense reasoning. This naturally led to the question: How do VLMs respond when the image is inherently unreasonable? To this end, we present IllusionVQA: a diverse dataset of challenging optical illusions and hard-to-interpret scenes to test the capability of VLMs in two distinct multiple-choice VQA tasks - comprehension and soft localization. GPT4V, the best performing VLM, achieves 62.99% accuracy (4-shot) on the comprehension task and 49.7% on the localization task (4-shot and Chain-of-Thought). Human evaluation reveals that humans achieve 91.03% and 100% accuracy in comprehension and localization. We discover that In-Context Learning (ICL) and Chain-of-Thought reasoning substantially degrade the performance of GeminiPro on the localization task. Tangentially, we find out a potential weakness in the ICL capabilities of VLMs: they fail to locate optical illusions even when the correct answer is in the context window as a few-shot example.
+Vision-language models are often evaluated on object recognition and commonsense VQA, but those tasks assume the image is reasonable. IllusionVQA is a dataset of optical illusions and hard-to-interpret scenes with two multiple-choice tasks: comprehension and soft localization. GPT-4V, the strongest model at the time, reaches 63% on comprehension and 50% on localization with few-shot prompting, while humans are near ceiling. In-context learning and chain-of-thought can even hurt localization, and models fail to locate illusions even when the correct answer is sitting in the prompt as a few-shot example.
 </p>

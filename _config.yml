@@ -15,7 +15,7 @@ locale                   : "en-US"
 title                    : "Haz Sameen Shahgir"
 title_separator          : "-"
 name                     : &name "Haz Sameen Shahgir"
-description              : &description "AI/NLP PhD Student at UCR."
+description              : &description "CS PhD student at UCR working on multimodal interpretability, long-context safety, and AI for science."
 url                      : https://patchwork53.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "Patchwork53.github.io"
@@ -28,7 +28,7 @@ author:
   avatar           : "profile.png"
   name             : "Haz Sameen Shahgir"
   pronouns         : # example: "she/her"  
-  bio              : "CS PhD Student, University of California Riverside"
+  bio              : "CS PhD student at UC Riverside. Multimodal interpretability, long-context safety, and AI for science."
   location         : "Riverside, CA"
   employer         : 
   uri              : # URL
@@ -61,7 +61,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : "haz-sameen-shahgir"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username

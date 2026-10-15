@@ -1,148 +1,94 @@
 ---
-title: "Can Finetuned Vision Language Models Generalize to Different Tasks on the Same Image?"
+title: "Can Fine-Tuned Vision-Language Models Generalize Across Tasks on the Same Images?"
 collection: talks
-type: "Pilot Experiments"
+type: "Pilot experiments"
 permalink: /talks/2025-04-07-vlm-generalization
-venue: "Blog"
+venue: "Research notes"
 date: 2025-04-06
-location: "Riverside CA, USA"
+location: "Riverside, CA"
+excerpt: "A small experiment on whether fine-tuning a vision-language model for one visual task helps it handle other tasks on the same images."
 ---
 
-If we have a very detailed text caption for an image, we can use the caption to generate many, many questions about the image. Should we generate and train on as many such synthetic questions as possible? Or is training on a couple questions good enough? 
+A detailed caption can generate many questions about an image. But how many of those questions do we need for useful training? If a model learns to count objects, does it also learn to locate them? If it learns to count objects of one color, can it count objects of a particular shape?
 
-The vision encoder in Vision Language Models (VLMs) is often pre-aligned with text via the CLIP objective. The vision encoder’s final patchwise embeddings are pooled and contrasted against text embeddings from a BERT model. In my opinion, there are two key shortcomings:
+These questions matter because training data often treats each image-question pair as a separate example, even when several questions draw on the same visual content. I ran a small experiment to see whether fine-tuning on one task transfers to other tasks over the same images.
 
-1. Pooling loses fine-grained information  
-2. The text caption of an image rarely encode all the visual details
+Many vision-language models (VLMs) use a vision encoder aligned with text through a contrastive objective such as CLIP. Pooling patch-level image features can discard fine detail, while captions used during alignment may leave out details that later tasks require. Despite this, VLMs can perform well on OCR. Their weaknesses are more visible on tasks that depend on precise visual relationships, such as chart understanding and spatial reasoning.
 
-To me, it’s a small miracle that VLMs are very capable of OCR despite these shortcomings in the vision encoder. But on other tasks that require fine-grained visual understanding such as chart understanding and spatial reasoning, VLMs show very poor out-of-the-box performance.
+## Experiment question
 
-In this blog post, I wanted to explore whether VLMs effectively generalize to new tasks on the same set of images. If we finetune a VLM to count objects on a scene, does it learn to locate objects? If we finetune it to count objects of a certain color, does it learn to count objects of a certain shape? 
+The experiment asks whether training on a subset of questions can help a model use an image more broadly. For example, does training on object counts transfer to locating objects, or does training on color counts transfer to shape counts?
 
-Implications:
+The central idea is **image reuse during training**: when one image supports many possible questions, does a model benefit from seeing more of those questions, or can a few representative tasks teach it to use the image more effectively?
 
-Let’s introduce a sense of **“maximally utilizing an image when training”**. For example, if we have a very detailed text caption for an [image](https://arxiv.org/pdf/2404.19753):  
-![][image1]  
-Should we generate and train on as many questions from it as possible? Or is training on one or two questions good enough? 
+## Synthetic task design
 
-# Synthetic Task Design
+To control the visual details and question types, I generated 1,000 scenes in Blender using [this script](https://github.com/dali-does/clevr-math). Each scene contains 3–8 objects with randomized shapes, colors, materials, and sizes. Here is one example of the scene attributes:
 
-![][image2]![][image3]![][image4]  
-I generated 1000 images using Blender ([script](https://github.com/dali-does/clevr-math)). Each image contains 3 to 8 objects with the following randomized parameters:
-
-```  
-{  
-  "shapes": {  
-    "cube": "SmoothCube\_v2",  
-    "sphere": "Sphere",  
-    "cylinder": "SmoothCylinder"  
-  },  
-  "colors": {  
-    "gray": \[87, 87, 87\],  
-    "red": \[173, 35, 35\],  
-    "blue": \[42, 75, 215\],  
-    "green": \[29, 105, 20\],  
-    "brown": \[129, 74, 25\],  
-    "purple": \[129, 38, 192\],  
-    "cyan": \[41, 208, 208\],  
-    "yellow": \[255, 238, 51\]  
-  },  
-  "materials": {  
-    "rubber": "Rubber",  
-    "metal": "MyMetal"  
-  },  
-  "sizes": {  
-    "large": 0.7,  
-    "small": 0.35  
-  }  
-}  
+```json
+{
+  "shapes": ["cube", "sphere", "cylinder"],
+  "colors": ["gray", "red", "blue", "green", "brown", "purple", "cyan", "yellow"],
+  "materials": ["rubber", "metal"],
+  "sizes": ["large", "small"]
+}
 ```
 
-I designed 8 tasks:
+I designed eight tasks:
 
-* **Extreme Material:** *What is the {left-most/right-most/farthest back/closest} item made out of?*  
-* **Extreme Color:** …  
-* **Extreme Shape:** …  
-* **Extreme All:** *Identify objects the leftmost/rightmost/farthest back/closest to the camera. Respond in the format: \[size\] \[color\] \[material\] \[shape\].*  
-* **Count Material:** *Count the total number of rubber/metal objects.*  
-* **Count Color:** …  
-* **Count Shape:** …  
-* **Count Relative to:** *Count how many objects are \- to the {left of/right of/further back than/closer to the camera} than {given\_object}. (“How many objects are to the right of the small green metal sphere?”)*
+- **Extreme material, color, or shape:** identify the property of the leftmost, rightmost, farthest, or nearest object.
+- **Extreme all:** identify the leftmost, rightmost, farthest, or nearest object and report its size, color, material, and shape.
+- **Count material, color, or shape:** count objects with a specified property.
+- **Count relative to:** count objects positioned to one side of, closer than, or farther than a specified object.
 
-I think the relative order of difficulty for humans would be:
+For people, I expected relative counting to be hardest because it requires finding a reference object before counting. Simple property counts should be easier, followed by identifying one property at an extreme. Identifying all four properties of an extreme object also requires a longer, precisely formatted answer, which may make it difficult for a VLM.
 
-Count Relative to \> Count Material \> Count Color \= Count Shape \> Extreme All \> Extreme Color \> Extreme Shape \= Extreme Material
+## Data and models
 
-Finding objects at spatial extremes is super easy for humans. We can probably find it at a glance. Counting is a bit harder. “Count Relative to” first required us to find the given object before we begin counting.
+I used 800 images for training and held out 200 for testing. For evaluation, I sampled up to 1,500 questions per task from each split. I compared training on all eight tasks with training on one task at a time, including a balanced setting with about 188 examples per task (roughly 1,500 total).
 
-For a VLM, the Extremum task is likely harder. It must identify all 4 properties and format it correctly while the other tasks only require it to generate a single numeric token. Perhaps annotating the images with unique IDs overlaid on each object might make it easier for VLMs. I’ll leave that for future work.
+The models were Qwen2-VL-2B-Instruct and Llama-3.2-11B-Vision-Instruct, both in 4-bit form. I fine-tuned each model for two epochs with QLoRA using Unsloth, keeping the vision encoder frozen. The in-domain evaluation uses images seen during training; the out-of-domain evaluation uses the held-out images.
 
-# Data and Model
+## Results at a glance
 
-I generated 1000 images, 800 of which I use for training and 200 for testing. The number of QA generated per image depends on the number of objects. Out of \~13K generated VQA from the test images, I sample 1500 VQA for each tasks (totaling 8\*1500=12000). 
+The results suggest that fine-tuning can transfer across tasks on these synthetic scenes, though the size and direction of that transfer depend on the model and task. In the Llama evaluation, training on the **Extreme Color** task reached about 58% of the gain from training on all eight tasks, while also improving several other tasks.
 
-All task training set 1: 8\*1500 \= 12000 images  
-All task training set 2: 8\*188 \= 1504 images
+A few patterns stood out:
 
-Task {i} training set \= 1500 images of task {i} 		(8 such sets)
+- Training on all tasks together generally performed best.
+- For Llama, performance was similar on the in-domain and held-out image sets, suggesting that the gains were not limited to memorizing the training images.
+- With a budget of roughly 1,500 examples, training on Extreme Color performed comparably to splitting the budget across all eight tasks in the reported comparison.
+- Qwen2-VL-2B showed little or inconsistent improvement on several tasks, suggesting that transfer also depends on the model’s starting capabilities.
 
-Test Set 1: \~2800 questions from 800 images in the train set (in-domain test set)  
-Test Set 2: \~2800 questions from 200 images in the test set (out-domain test set)
+These are pilot results from a controlled synthetic setting. They do not establish that the same transfer patterns will hold for natural images or other models, but they offer a useful way to study how much visual skill a model can reuse across tasks.
 
-I tested: 
+## Detailed results
 
-1. Qwen2-VL-2B-Instruct-bnb-4bit  
-2. Llama-3.2-11B-Vision-Instruct-bnb-4bit
+### In-domain evaluation
 
-I used the **unsloth** library and fine-tuned VLMs for 2 epochs using QLoRA for simplicity. I kept the vision encoder frozen during training.
-
-# Results Summary
-
-**Main Result:** VLMs do generalize to unseen tasks on same/similar images.
-
-For example, fine-tuning on the “Extreme-Color” task boosts performance on all other tasks. It is 58% as good as fine-tuning on all 8 tasks.
-
-**Other Results:**
-
-- Fine-tuning on all tasks together has the best performance.   
-- For LLaMA-3-11B, no noticeable difference on in-domain and out-domain test sets. The VLM hasn’t memorized image data?  
-- Suppose we have the budget to finetune on \~1500 examples. Do we sample 188 examples from each of the 8 tasks or sample \~1500 examples from one task? Results show that fine-tuning on 1500 Extreme Color examples is as good as fine-tuning on \~1504 balanced examples.  
-- Qwen-VL-2B fails completely. Maybe it doesn’t have the base capabilities for spatial reasoning, material perception and counting.
-
-# Detailed Results
-
-### In-domain Test Set
-
-Baseline performance and finetuning on all tasks
-
-Each cell shows accuracy
+Baseline performance and performance after fine-tuning on all tasks. Each cell shows accuracy.
 
 ![][image5]
 
-Finetuning on one specific task and testing on others
+Performance after fine-tuning on one task and testing on the others. Each cell shows the fraction of the improvement from full fine-tuning that was recovered by one-task fine-tuning:
 
-Each cell shows the what fraction of full-finetuning is achieved  \= oneTaskFT \- noFT allTaskFT \- noFT\*100
+`(one-task accuracy − baseline accuracy) / (all-task accuracy − baseline accuracy) × 100%`
 
 ![][image6]
 
-### Out-domain Test Set
+### Held-out images
 
-Baseline performance and finetuning on all tasks
+Baseline performance and performance after fine-tuning on all tasks. Each cell shows accuracy.
 
-Each cell shows the accuracy  
 ![][image7]
 
-Finetuning on one specific task and testing on others
-
-Each cell shows the what fraction of full-finetuning is achieved  \= oneTaskFT \- noFT allTaskFT \- noFT\*100
+Performance after fine-tuning on one task and testing on the others, using the same transfer score defined above.
 
 ![][image8]
 
-# Highest Cross Task Transfer
+## Strongest cross-task transfer
 
-Out Domain Test Set
-
-Yellow highlights the test task that benefitted the most from the train task (other than itself)
+Held-out images. Yellow marks the test task that benefited most from each training task, excluding the matching task.
 
 ![][image9]
 

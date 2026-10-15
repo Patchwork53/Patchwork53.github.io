@@ -1,17 +1,16 @@
 ---
 title: "Asymmetric Bias in Text-to-Image Generation with Adversarial Attacks"
 collection: publications
-Authors: '<b>Haz Sameen Shahgir</b>, Xianghao Kong, Greg Ver Steeg, Yue Dong.'
-date: 04/2024
+Authors: '<b>Haz Shahgir</b>, Xianghao Kong, Greg Ver Steeg, Yue Dong'
+date: 2024-08-01
 venue: 'Findings of ACL 2024'
 paperurl: 'https://arxiv.org/pdf/2312.14440.pdf'
 codeurl: 'https://github.com/Patchwork53/AsymmetricAttack'
 excerpt: ''
 webpage: ''
 ---
----
-<a href='https://arxiv.org/pdf/2312.14440.pdf' target="_blank">[Download Paper]</a><a href='https://github.com/Patchwork53/AsymmetricAttack' target="_blank">[Source Code]</a>
+<a href='https://arxiv.org/pdf/2312.14440.pdf' target="_blank">[Download Paper]</a> <a href='https://github.com/Patchwork53/AsymmetricAttack' target="_blank">[Source Code]</a>
 
 <p align="justify">
-The widespread use of Text-to-Image (T2I) models in content generation requires careful examination of their safety, including their robustness to adversarial attacks. Despite extensive research into this, the reasons for their effectiveness are underexplored. This paper presents an empirical study on adversarial attacks against T2I models, focusing on analyzing factors associated with attack success rates (ASRs). We introduce a new attack objective - entity swapping using adversarial suffixes and two gradient-based attack algorithms. Human and automatic evaluations reveal the asymmetric nature of ASRs on entity swap: for example, it is easier to replace "human" with "robot" in the prompt "a human dancing in the rain." with an adversarial suffix but is significantly harder in reverse. We further propose probing metrics to establish indicative signals from the model's beliefs to the adversarial ASR. We identify conditions resulting in a 60% success probability for adversarial attacks and others where this likelihood drops below 5%.
+Text-to-image models are widely used, so it matters when adversarial suffixes can rewrite what they draw. We study entity swapping: adding a suffix that tries to replace one entity in a prompt with another. Attack success is asymmetric — it is much easier to turn “a human dancing in the rain” into a robot than the reverse. Probing the model’s beliefs gives a useful signal of when an attack is likely to work, with success rates ranging from about 60% in some conditions to under 5% in others.
 </p>
