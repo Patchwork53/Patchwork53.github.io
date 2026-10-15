@@ -399,3 +399,32 @@
   font-size: $type-size-6;
   text-transform: uppercase;
 }
+
+/*
+   Wide result tables in research write-ups
+   ========================================================================== */
+
+.vlm-results {
+  margin: 1.5em 0;
+  padding: 0.75em 0;
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+
+  > summary {
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  &[open] > summary {
+    margin-bottom: 1em;
+  }
+}
+
+.page__content table.vlm-results-table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  font-size: 0.75em;
+  -webkit-overflow-scrolling: touch;
+}
